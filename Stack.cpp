@@ -1,39 +1,15 @@
 #include <iostream>
-#include <ostream>
+#include <Stack.h>
 
-using namespace std;
-
-template < typename T > class Stack 
-{
-	private:
-    	T* stack ;	
-    	int top ;
-    	int maxSize ;
-
-	public :
-	Stack( ) ;
-	~Stack( ) ;
-	bool isEmpty( ) ;
-	bool isFull( ) ;
-	void push( T ) ;
-	void pop( ) ;
-	int peek( ) ;
-	int status( ) ;
-
-	template < class U >
-	friend ostream& operator << ( ostream& , stack<U> ) ;
-} ;
-
-template < class T >
-{
-	Stack < T > :: Stack( int ) 
+	template < class T >
+	Stack < T > :: Stack( int size ) 
     	{
 	        maxSize = size ;
 	        stack = new T[ maxSize ] ; 
 		top = -1 ;
         }
 
-
+	template < class T >
      	Stack < T > :: ~Stack( ) 
 	{
         	delete[	] stack ;
@@ -41,21 +17,21 @@ template < class T >
 
 
 	template < class T >
-	bool Stack( ) :: isEmpty( ) 
+	bool Stack< T > :: isEmpty( ) 
 	{
         	return top == -1 ;
     	}
 
 
 	template < class T >
-	bool Stack( ) :: isFull( )
+	bool Stack< T > :: isFull( )
 	{
         	return top == maxSize - 1;
     	} 
 	
 
 	template < class T >
-	void Stack( ) :: push( T x ) 
+	void Stack< T > :: push( T x ) 
 	{
         	if ( !isFull( ) ) 
 		{
@@ -70,7 +46,7 @@ template < class T >
 
 
 	template < class T >
-	void Stack( ) :: pop( ) 
+	void Stack< T > :: pop( ) 
 	{
          	if ( !isEmpty( ) ) 
 		{
@@ -84,7 +60,7 @@ template < class T >
 
 
 	template < class T >
-	int Stack( ) :: peek( ) 
+	int Stack< T > :: peek( ) 
 	{
         	if ( !isEmpty( ) ) 
 		{
@@ -99,57 +75,8 @@ template < class T >
 
 
 	template < class T >
-	int Stack( ) :: status( ) 
+	int Stack< T > :: status( ) 
 	{
         	return ( ( top + 1 ) * 100) / maxSize ;
     	}
-	
-	template < class U >
-	ostream& operator << ( ostream& os , Stack < U > St ) 
-	{
-		int i ;
-		os << endl ; 
-		
-} ;
-
-int main( ) 
-{
-    int max ;
-
-    cout << "Enter max size for the stack: " << endl ;
-    cin >> max ;
-
-    Stack stack( max ) ;
-
-    cout <<  stack.isFull( ) << endl ;
-    cout <<  stack.isEmpty( ) << endl ;
-
-    stack.push( 1 ) ;
-    stack.push( 2 ) ;
-    stack.push( 3 ) ;
-    stack.push( 4 ) ;
-    stack.push( 5 ) ;
-    stack.push( 6 ) ; // Stack overflow!
-
-    cout << "Status: " << stack.status( ) << "%" << endl ;
-
-    cout <<  stack.isFull( ) << endl ;
-    cout <<  stack.isEmpty( ) << endl ;
-
-    stack.pop( ) ;
-    stack.pop( ) ;
-    stack.pop( ) ;
-    stack.pop( ) ;
-    stack.pop( ) ; 
-    stack.pop( ) ; // Stack underflow!
-
-    cout << "Status: " << stack.status( ) << "%" << endl ;
-
-    cout <<  stack.isFull( ) << endl ;
-    cout <<  stack.isEmpty( ) << endl ;
-
-    return 0 ;
-}
-
-			
 
