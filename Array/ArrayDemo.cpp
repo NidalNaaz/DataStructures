@@ -8,24 +8,25 @@ int main() {
     int choice;
     int element, position;
 
+    cout << "\nMenu:\n";
+    cout << "1. Insert an element at the beginning\n";
+    cout << "2. Insert an element at the end\n";
+    cout << "3. Insert an element at a specific index\n";
+    cout << "4. Delete an element from the beginning\n";
+    cout << "5. Delete an element from the end\n";
+    cout << "6. Delete an element from a specific index\n";
+    cout << "7. Linear Search\n";
+    cout << "8. Binary Search\n";
+    cout << "9. Selection Sort\n";
+    cout << "10. Bubble Sort\n";
+    cout << "11. Insertion Sort\n";
+    cout << "12. Quick Sort\n";
+    cout << "13. Rotate Clockwise\n";
+    cout << "14. Rotate Anti-Clockwise\n";
+    cout << "15. Print Array\n";
+    cout << "0. Exit\n";
+    
     do {
-        cout << "\nMenu:\n";
-        cout << "1. Insert an element at the beginning\n";
-        cout << "2. Insert an element at the end\n";
-        cout << "3. Insert an element at a specific index\n";
-        cout << "4. Delete an element from the beginning\n";
-        cout << "5. Delete an element from the end\n";
-        cout << "6. Delete an element from a specific index\n";
-        cout << "7. Linear Search\n";
-        cout << "8. Binary Search\n";
-        cout << "9. Selection Sort\n";
-        cout << "10. Bubble Sort\n";
-        cout << "11. Insertion Sort\n";
-        cout << "12. Quick Sort\n";
-        cout << "13. Rotate Clockwise\n";
-        cout << "14. Rotate Anti-Clockwise\n";
-        cout << "15. Print Array\n";
-        cout << "0. Exit\n";
         cout << "Enter your choice: ";
         cin >> choice;
 
