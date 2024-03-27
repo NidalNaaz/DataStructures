@@ -1,0 +1,12 @@
+#include "RWS.cpp"
+
+int main() {
+    int n;
+    cout << "Enter the value of n: ";
+    cin >> n;
+
+    int result = recursiveFunction(n);
+    cout << "Result: " << result << endl;
+
+    return 0;
+}
