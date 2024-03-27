@@ -1,4 +1,4 @@
-#include "LabCycle2-9.cpp"
+
 
 int main() {
     string postfix;
